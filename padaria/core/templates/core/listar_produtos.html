@@ -22,6 +22,9 @@
                 <td>{{ produto.preco }}</td>
                 <td>{{ produto.categoria }}</td>
                 <td>{{ produto.descricao }}</td>
+                <td>
+                    <a href="{% url 'editar_produto' produto.pk %}">Editar</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
