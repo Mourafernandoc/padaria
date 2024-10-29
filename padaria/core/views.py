@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect, get_list_or_404
+from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
 from .models import Produto
 from .forms import ProdutoForm
 
 # Create your views here.
 
 def editar_produto(request, pk):
-    produto = get_list_or_404(Produto, pk=pk)
+    produto = get_object_or_404(Produto, pk=pk)
 
     if request.method == 'POST':
         form = ProdutoForm(request.POST, instance=produto)
